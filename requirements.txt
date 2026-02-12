@@ -1,0 +1,7 @@
+asgiref
+defusedxml
+Django
+djangorestframework
+djangorestframework-xml
+sqlparse
+tzdata
