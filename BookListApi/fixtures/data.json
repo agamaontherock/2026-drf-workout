@@ -1,0 +1,40 @@
+[
+  {
+    "model": "api_2.bookgenre",
+    "pk": 1,
+    "fields": {
+      "name": "Dark Fantasy",
+      "slug": "dark-fantasy"
+    }
+  },
+  {
+    "model": "api_2.bookgenre",
+    "pk": 2,
+    "fields": {
+      "name": "Cyberpunk",
+      "slug": "cyberpunk"
+    }
+  },
+  {
+    "model": "api_2.book",
+    "pk": 1,
+    "fields": {
+      "title": "Echoes of the Void",
+      "author": "V. S. Thorne",
+      "inventory": 12,
+      "price": "24.99",
+      "genre": 1
+    }
+  },
+  {
+    "model": "api_2.book",
+    "pk": 2,
+    "fields": {
+      "title": "Silicon Dirge",
+      "author": "K. R. Miller",
+      "inventory": 5,
+      "price": "19.50",
+      "genre": 2
+    }
+  }
+]
