@@ -4,6 +4,7 @@ from django.http import QueryDict
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework import status,viewsets
+from rest_framework import permissions
 
 from .models import BookGenre, Book
 from .serializers import BookModelSerializer, GenreModelSerializer
@@ -43,3 +44,4 @@ def genre_info(req, pk):
 class BookModelVset(viewsets.ModelViewSet):
     serializer_class = BookModelSerializer
     queryset = Book.objects.all()
+    permission_classes = [permissions.IsAuthenticated]

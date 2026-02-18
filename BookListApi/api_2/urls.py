@@ -1,5 +1,6 @@
 from . import views
 from django.urls import path, include
+from rest_framework import urls
 # from views import BookModelVset
 from rest_framework import routers
 
@@ -10,4 +11,5 @@ urlpatterns = [
     path('', include(router.urls)),
     # path('books/<int:pk>', views.book_info),
     path('genres/<int:pk>', views.genre_info, name="genre-detail"),
+    path('api-auth/', include('rest_framework.urls')),
 ]
