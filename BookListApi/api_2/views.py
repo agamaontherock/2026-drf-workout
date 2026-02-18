@@ -4,9 +4,10 @@ from django.http import QueryDict
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework import status,viewsets
+from rest_framework import permissions
 
-from .models import Book
-from .serializers import BookModelSerializer
+from .models import BookGenre, Book
+from .serializers import BookModelSerializer, GenreModelSerializer
 # Create your views here.
 @api_view(["GET", "POST"])
 def books(req):
@@ -34,6 +35,13 @@ def book_info(req, pk):
     serializer = BookModelSerializer(book)
     return Response(data=serializer.data, status=status.HTTP_200_OK)
 
+@api_view(["GET"])
+def genre_info(req, pk):
+    book_genre = get_object_or_404(BookGenre, pk=pk)
+    serializer = GenreModelSerializer(book_genre)
+    return Response(data=serializer.data, status=status.HTTP_200_OK)
+
 class BookModelVset(viewsets.ModelViewSet):
     serializer_class = BookModelSerializer
     queryset = Book.objects.all()
+    permission_classes = [permissions.IsAuthenticated]
